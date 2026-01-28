@@ -23,3 +23,8 @@ npm-debug.log*
 
 # Context file (development notes)
 oeradio-mcp-context.md
+
+# MCP Registry tokens and keys
+.mcpregistry_*
+mcp-registry-key.pem
+mcp-publisher

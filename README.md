@@ -1,268 +1,141 @@
-# oeradio.at MCP Server 📻 (Docker Edition)
+# OERadio MCP Server
 
-Öffentlicher Model Context Protocol (MCP) Server für Amateurfunk-Berechnungen und Informationen.
+Public MCP (Model Context Protocol) server providing amateur radio tools and calculations for IARU Region 1 operators.
 
-**Erstellt von OE8YML** | [oeradio.at](https://oeradio.at)
+**Endpoint:** https://oeradio-mcp.oeradio.at/mcp
+**Author:** OE8YML
+**License:** MIT
 
-## 🐳 Quick Start mit Docker
+## What is MCP?
 
-```bash
-# Repository klonen
-git clone https://github.com/oe8yml/oeradio-mcp.git
-cd oeradio-mcp
+Model Context Protocol (MCP) is a standard that allows AI assistants like Claude to use external tools. With this server, you can ask your AI assistant questions like "What are the band limits for 20m?" or "How long should my dipol be for 14.2 MHz?" and get instant calculations.
 
-# Container bauen und starten
-docker compose up -d
+## Available Tools
 
-# Logs anzeigen
-docker compose logs -f
-```
+| Tool | Description |
+|------|-------------|
+| `get_band_plan` | Get IARU Region 1 band plan for a specific band |
+| `list_all_bands` | List all amateur radio bands |
+| `check_frequency` | Check if a frequency is within amateur bands |
+| `calculate_eirp` | Calculate EIRP/ERP from power, cable loss, and antenna gain |
+| `calculate_cable_loss` | Calculate coaxial cable attenuation |
+| `compare_cables` | Compare all cable types at a given frequency and length |
+| `calculate_battery_runtime` | Calculate battery runtime for portable operation |
+| `get_antenna_gain` | Look up typical antenna gain values |
+| `calculate_wavelength` | Calculate wavelength and antenna lengths |
+| `calculate_swr_loss` | Calculate power loss from SWR mismatch |
+| `convert_power` | Convert between Watt, dBm, and dBW |
 
-Server läuft dann auf: `http://localhost:3000/mcp`
+## Available Resources
 
-## 🌐 Öffentlich erreichbar machen
+| URI | Description |
+|-----|-------------|
+| `bandplan://iaru-region1/complete` | Complete IARU Region 1 band plan |
+| `cables://coaxial/all` | Attenuation data for all coaxial cables |
+| `antennas://gains/all` | Typical antenna gain values |
 
-### Option 1: Cloudflare Tunnel (empfohlen)
+## Supported Data
 
-```bash
-# 1. Tunnel erstellen (einmalig)
-cloudflared tunnel create oeradio-mcp
+### Bands (IARU Region 1)
+2200m, 630m, 160m, 80m, 60m, 40m, 30m, 20m, 17m, 15m, 12m, 10m, 6m, 2m, 70cm, 23cm, 13cm
 
-# 2. Tunnel mit Domain verknüpfen
-cloudflared tunnel route dns oeradio-mcp mcp.oeradio.at
+### Coaxial Cables
+RG58, RG213, H2000Flex, Aircell7, Ecoflex10, Ecoflex15, LMR400, LMR600
 
-# 3. Token kopieren
-cloudflared tunnel token oeradio-mcp
+### Antenna Types
+Dipol, Groundplane, Vertical, Yagi (3/5/7 elements), Quad (2 elements), J-Pole, Slim Jim, Collinear (X50/X200/X510)
 
-# 4. .env erstellen
-cp .env.example .env
-# TUNNEL_TOKEN= eintragen
-
-# 5. Mit Tunnel starten
-docker compose --profile tunnel up -d
-```
-
-Danach erreichbar unter: `https://mcp.oeradio.at/mcp`
-
-### Option 2: Reverse Proxy (Traefik/Nginx)
-
-docker-compose.yml enthält bereits Traefik-Labels. Passe die Domain an:
-
-```yaml
-labels:
-  - "traefik.http.routers.oeradio-mcp.rule=Host(`mcp.deine-domain.at`)"
-```
-
-### Option 3: Direkt mit Port-Forwarding
-
-```bash
-# Port 3000 im Router freigeben (nicht empfohlen für Production)
-docker compose up -d
-```
-
-## 📁 Projektstruktur
-
-```
-oeradio-mcp-docker/
-├── src/
-│   └── index.ts          # MCP Server Code
-├── Dockerfile            # Multi-stage Build
-├── docker-compose.yml    # Container-Konfiguration
-├── package.json
-├── tsconfig.json
-├── .env.example
-└── README.md
-```
-
-## 🔧 Verfügbare Tools
-
-| Tool | Beschreibung |
-|------|--------------|
-| `get_band_plan` | IARU Region 1 Bandplan für ein Band |
-| `list_all_bands` | Alle Amateurfunkbänder auflisten |
-| `check_frequency` | Prüfen ob Frequenz erlaubt ist |
-| `calculate_eirp` | EIRP/ERP berechnen |
-| `calculate_cable_loss` | Kabeldämpfung berechnen |
-| `compare_cables` | Alle Kabeltypen vergleichen |
-| `calculate_battery_runtime` | Akkulaufzeit berechnen |
-| `get_antenna_gain` | Antennengewinn nachschlagen |
-| `calculate_wavelength` | Wellenlänge + Antennenlängen |
-| `calculate_swr_loss` | SWR zu Verlust umrechnen |
-| `convert_power` | Watt ↔ dBm ↔ dBW |
-
-## 🔌 Client-Konfiguration
+## Client Configuration
 
 ### Claude Desktop / Claude Code
 
-In `~/.config/claude/claude_desktop_config.json`:
+Add to your MCP configuration file:
 
 ```json
 {
   "mcpServers": {
     "oeradio": {
       "type": "streamable-http",
-      "url": "https://mcp.oeradio.at/mcp"
+      "url": "https://oeradio-mcp.oeradio.at/mcp"
     }
   }
 }
 ```
 
-### Lokale Nutzung
-
-```json
-{
-  "mcpServers": {
-    "oeradio": {
-      "type": "streamable-http",
-      "url": "http://localhost:3000/mcp"
-    }
-  }
-}
-```
-
-### Für Clients die nur stdio unterstützen
-
-Verwende [mcp-remote](https://github.com/anthropics/mcp-remote):
+### Clients with stdio only
 
 ```json
 {
   "mcpServers": {
     "oeradio": {
       "command": "npx",
-      "args": ["mcp-remote", "https://mcp.oeradio.at/mcp"]
+      "args": ["mcp-remote", "https://oeradio-mcp.oeradio.at/mcp"]
     }
   }
 }
 ```
 
-## 🛠️ Entwicklung
+## API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/` | GET | Server info and tool list |
+| `/health` | GET | Health check |
+| `/mcp` | POST | MCP JSON-RPC requests |
+| `/mcp` | GET | MCP SSE stream (with session ID) |
+| `/mcp` | DELETE | End session |
+
+## Self-Hosting
+
+### Requirements
+- Node.js 20+
+- Docker (optional)
+
+### Docker
 
 ```bash
-# Dependencies installieren
+docker build -t oeradio-mcp .
+docker run -d -p 3000:3000 --name oeradio-mcp oeradio-mcp
+```
+
+### Docker Compose
+
+```bash
+docker compose up -d
+```
+
+### Manual
+
+```bash
 npm install
-
-# Dev-Server mit Hot-Reload
-npm run dev
-
-# TypeScript kompilieren
 npm run build
-
-# Production starten
 npm start
 ```
 
-## 📊 API Endpoints
-
-| Endpoint | Methode | Beschreibung |
-|----------|---------|--------------|
-| `/` | GET | Server-Info und Tool-Liste |
-| `/health` | GET | Health Check |
-| `/mcp` | POST | MCP JSON-RPC Requests |
-| `/mcp` | GET | MCP SSE Stream |
-| `/mcp` | DELETE | Session beenden |
-
-### Health Check Response
-
-```json
-{
-  "status": "ok",
-  "server": "oeradio-mcp",
-  "version": "1.0.0",
-  "uptime": 12345.67,
-  "sessions": 3
-}
-```
-
-## 🔒 Sicherheit
-
-- **Read-Only**: Alle Tools führen nur Berechnungen durch
-- **Non-Root**: Container läuft als unprivilegierter User
-- **No Secrets**: Keine API-Keys oder sensible Daten
-- **CORS**: Konfigurierbar für spezifische Origins
-
-### Rate Limiting hinzufügen (optional)
-
-```typescript
-import rateLimit from 'express-rate-limit';
-
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 Minuten
-  max: 100 // Max 100 Requests pro IP
-});
-
-app.use('/mcp', limiter);
-```
-
-## 🖥️ Raspberry Pi Deployment
+## Development
 
 ```bash
-# Auf dem Pi
-git clone https://github.com/oe8yml/oeradio-mcp.git
-cd oeradio-mcp
-
-# ARM-kompatibles Image bauen
-docker compose build
-
-# Starten
-docker compose up -d
-
-# Mit Cloudflare Tunnel für globalen Zugriff
-docker compose --profile tunnel up -d
+npm install
+npm run dev
 ```
 
-Image-Größe: ~180MB (Alpine-basiert)
+## Registry
 
-## 📈 Monitoring
+This server is published to the MCP Registry:
+- **Name:** `io.github.achildrenmile/oeradio-mcp`
+- **Version:** 1.0.0
 
-### Docker Stats
+## Links
 
-```bash
-docker stats oeradio-mcp
-```
+- Website: https://oeradio.at
+- MCP Endpoint: https://oeradio-mcp.oeradio.at/mcp
+- Health Check: https://oeradio-mcp.oeradio.at/health
+- GitHub: https://github.com/achildrenmile/oeradio-mcp
 
-### Logs
+## License
 
-```bash
-# Live-Logs
-docker compose logs -f
-
-# Letzte 100 Zeilen
-docker compose logs --tail=100
-```
-
-### Prometheus Metrics (optional)
-
-Füge zu `src/index.ts` hinzu:
-
-```typescript
-import promClient from 'prom-client';
-
-app.get('/metrics', async (req, res) => {
-  res.set('Content-Type', promClient.register.contentType);
-  res.end(await promClient.register.metrics());
-});
-```
-
-## 🔄 Updates
-
-```bash
-# Neuen Code pullen
-git pull
-
-# Container neu bauen und starten
-docker compose up -d --build
-```
-
-## 📜 Lizenz
-
-MIT License - Frei verwendbar für die Amateurfunk-Community.
-
-## 🔗 Links
-
-- [oeradio.at](https://oeradio.at) - Weitere Ham Radio Tools
-- [MCP Specification](https://modelcontextprotocol.io)
-- [MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+MIT
 
 ---
 
-73 de OE8YML 📻
+73 de OE8YML
