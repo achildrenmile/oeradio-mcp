@@ -1,0 +1,57 @@
+# oeradio.at MCP Server - Docker Compose
+#
+# Nutzung:
+#   docker compose up -d        # Starten
+#   docker compose logs -f      # Logs anzeigen
+#   docker compose down         # Stoppen
+#
+# Mit Cloudflare Tunnel:
+#   1. cloudflared tunnel create oeradio-mcp
+#   2. TUNNEL_TOKEN in .env eintragen
+#   3. docker compose --profile tunnel up -d
+
+services:
+  # ==========================================================================
+  # MCP Server
+  # ==========================================================================
+  oeradio-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: oeradio-mcp
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.oeradio-mcp.rule=Host(`mcp.oeradio.at`)"
+      - "traefik.http.routers.oeradio-mcp.tls.certresolver=letsencrypt"
+      - "traefik.http.services.oeradio-mcp.loadbalancer.server.port=3000"
+
+  # ==========================================================================
+  # Cloudflare Tunnel (optional)
+  # ==========================================================================
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: oeradio-mcp-tunnel
+    restart: unless-stopped
+    profiles:
+      - tunnel
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - oeradio-mcp
+
+networks:
+  default:
+    name: oeradio-mcp-network
