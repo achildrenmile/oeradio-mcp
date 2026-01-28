@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.achildrenmile/oeradio-mcp",
+  "description": "Amateur radio MCP server with band plans, EIRP, cable loss, antenna gains, and more",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/achildrenmile/oeradio-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://oeradio-mcp.oeradio.at/mcp"
+    }
+  ]
+}
