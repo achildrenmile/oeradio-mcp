@@ -8,7 +8,18 @@ Public MCP (Model Context Protocol) server providing amateur radio tools and cal
 
 ## What is MCP?
 
-Model Context Protocol (MCP) is a standard that allows AI assistants like Claude to use external tools. With this server, you can ask your AI assistant questions like "What are the band limits for 20m?" or "How long should my dipol be for 14.2 MHz?" and get instant calculations.
+Model Context Protocol (MCP) is an open standard that allows AI assistants to use external tools. Originally developed by Anthropic, MCP is now supported by Claude, ChatGPT, and Gemini. With this server, you can ask your AI assistant questions like "What are the band limits for 20m?" or "How long should my dipol be for 14.2 MHz?" and get instant calculations.
+
+## Supported AI Assistants
+
+| Platform | MCP Support | Notes |
+|----------|-------------|-------|
+| Claude Desktop | Yes | Full support |
+| Claude Code (CLI) | Yes | Full support |
+| ChatGPT Desktop | Yes | Requires Developer Mode (Pro/Plus/Team/Enterprise) |
+| Gemini CLI | Yes | Since December 2025 |
+| claude.ai (web) | No | Desktop app only |
+| chatgpt.com (web) | No | Desktop app only |
 
 ## Available Tools
 
@@ -47,15 +58,64 @@ Dipol, Groundplane, Vertical, Yagi (3/5/7 elements), Quad (2 elements), J-Pole, 
 
 ## Client Configuration
 
-### Claude Desktop / Claude Code
+### Claude Desktop
 
-Add to your MCP configuration file:
+Add to your configuration file:
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+- **Mac:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Linux:** `~/.config/claude/claude_desktop_config.json`
 
 ```json
 {
   "mcpServers": {
     "oeradio": {
       "type": "streamable-http",
+      "url": "https://oeradio-mcp.oeradio.at/mcp"
+    }
+  }
+}
+```
+
+### Claude Code (CLI)
+
+Add to `~/.config/claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "oeradio": {
+      "type": "streamable-http",
+      "url": "https://oeradio-mcp.oeradio.at/mcp"
+    }
+  }
+}
+```
+
+### ChatGPT (Developer Mode)
+
+Requires ChatGPT Pro, Plus, Team, or Enterprise account.
+
+1. Go to **Settings > Connectors > Advanced**
+2. Enable **Developer Mode**
+3. Click **Create** and enter:
+   - Name: `OERadio`
+   - URL: `https://oeradio-mcp.oeradio.at/mcp`
+4. In chat: Click **+ > More > Developer mode** and select OERadio
+
+### Gemini CLI
+
+Add the server using the command:
+
+```bash
+gemini mcp add --transport http oeradio https://oeradio-mcp.oeradio.at/mcp
+```
+
+Or add to your settings.json:
+
+```json
+{
+  "mcpServers": {
+    "oeradio": {
       "url": "https://oeradio-mcp.oeradio.at/mcp"
     }
   }
