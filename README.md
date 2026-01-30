@@ -23,6 +23,8 @@ Model Context Protocol (MCP) is an open standard that allows AI assistants to us
 
 ## Available Tools
 
+### Radio Calculation Tools
+
 | Tool | Description |
 |------|-------------|
 | `get_band_plan` | Get IARU Region 1 band plan for a specific band |
@@ -37,6 +39,18 @@ Model Context Protocol (MCP) is an open standard that allows AI assistants to us
 | `calculate_swr_loss` | Calculate power loss from SWR mismatch |
 | `convert_power` | Convert between Watt, dBm, and dBW |
 
+### Austrian Callsign Tools
+
+| Tool | Description |
+|------|-------------|
+| `callsign_lookup` | Search Austrian callsigns (fb.gv.at, QRZ.com, HamQTH fallback) |
+| `callsign_available` | Check if a suffix is available across Austrian districts |
+| `callsign_suggest` | Generate callsign suggestions based on name |
+| `callsign_validate` | Validate callsigns against Austrian rules |
+| `callsign_database_info` | Show database version and statistics |
+
+The callsign tools use the official Austrian callsign list from fb.gv.at as the primary data source. External lookups (QRZ.com, HamQTH) include warnings when a callsign is found externally but not in the official list.
+
 ## Available Resources
 
 | URI | Description |
@@ -44,6 +58,8 @@ Model Context Protocol (MCP) is an open standard that allows AI assistants to us
 | `bandplan://iaru-region1/complete` | Complete IARU Region 1 band plan |
 | `cables://coaxial/all` | Attenuation data for all coaxial cables |
 | `antennas://gains/all` | Typical antenna gain values |
+| `callsigns://districts` | Austrian amateur radio districts (OE1-OE9) |
+| `callsigns://license-classes` | Austrian license class information |
 
 ## Supported Data
 
@@ -55,6 +71,14 @@ RG58, RG213, H2000Flex, Aircell7, Ecoflex10, Ecoflex15, LMR400, LMR600
 
 ### Antenna Types
 Dipol, Groundplane, Vertical, Yagi (3/5/7 elements), Quad (2 elements), J-Pole, Slim Jim, Collinear (X50/X200/X510)
+
+### Austrian Callsign Data
+- **Source:** Official callsign list from fb.gv.at (Fernmeldebüro)
+- **Updates:** Automatic monthly updates via GitHub Actions
+- **Districts:** OE1 (Wien), OE2 (Salzburg), OE3 (NÖ), OE4 (Burgenland), OE5 (OÖ), OE6 (Steiermark), OE7 (Tirol), OE8 (Kärnten), OE9 (Vorarlberg)
+- **License Classes:** Class 1 (CEPT full), Class 3 (CEPT restricted), Class 4 (Beginner)
+
+The callsign database is updated automatically on the 2nd of each month and contains ~7,500 entries.
 
 ## Client Configuration
 
