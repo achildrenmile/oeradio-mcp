@@ -28,3 +28,6 @@ oeradio-mcp-context.md
 .mcpregistry_*
 mcp-registry-key.pem
 mcp-publisher
+
+# Callsign database backup
+data/callsigns_oe_backup.json

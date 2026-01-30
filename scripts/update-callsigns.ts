@@ -18,7 +18,8 @@ import { validateDatabase, generateReport } from '../src/tools/callsign/parser/v
 import { CallsignDatabase } from '../src/tools/callsign/parser/types.js';
 
 // Configuration
-const PDF_URL = 'https://www.fb.gv.at/dam/jcr:7a8aeec6-bbf2-4d7d-ab3b-5335ebc7b8ed/Rufzeichenliste_AT_Stand_010725.pdf';
+const FB_BASE_URL = 'https://www.fb.gv.at';
+const FB_AMATEURFUNK_PAGE = 'https://www.fb.gv.at/Funk/amateurfunkdienst.html';
 const DATA_DIR = path.join(process.cwd(), 'data');
 const OUTPUT_FILE = path.join(DATA_DIR, 'callsigns_oe.json');
 const BACKUP_FILE = path.join(DATA_DIR, 'callsigns_oe_backup.json');
@@ -28,16 +29,55 @@ Die Verwendung ist gemäß § 150 TKG 2021 nur für Amateurfunkzwecke gestattet.
 Eine kommerzielle Nutzung oder Weitergabe an Dritte ist nicht erlaubt.`;
 
 /**
- * Download PDF from URL
+ * Fetch the current PDF URL from the fb.gv.at website
  */
-async function downloadPdf(url: string): Promise<Buffer> {
+async function getCurrentPdfUrl(): Promise<string> {
+  return new Promise((resolve, reject) => {
+    https.get(FB_AMATEURFUNK_PAGE, (response) => {
+      if (response.statusCode !== 200) {
+        reject(new Error(`Failed to fetch page: HTTP ${response.statusCode}`));
+        return;
+      }
+
+      let html = '';
+      response.on('data', (chunk) => html += chunk);
+      response.on('end', () => {
+        // Look for Rufzeichenliste PDF link
+        // Pattern: /dam/jcr:xxx/Rufzeichenliste_AT_Stand_DDMMYY.pdf
+        const match = html.match(/href="([^"]*Rufzeichenliste[^"]*\.pdf)"/i);
+
+        if (!match) {
+          reject(new Error('Could not find Rufzeichenliste PDF link on page'));
+          return;
+        }
+
+        let pdfUrl = match[1];
+
+        // Make absolute URL if relative
+        if (pdfUrl.startsWith('/')) {
+          pdfUrl = FB_BASE_URL + pdfUrl;
+        } else if (!pdfUrl.startsWith('http')) {
+          pdfUrl = FB_BASE_URL + '/' + pdfUrl;
+        }
+
+        resolve(pdfUrl);
+      });
+      response.on('error', reject);
+    }).on('error', reject);
+  });
+}
+
+/**
+ * Download content from URL
+ */
+async function downloadUrl(url: string): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     const request = https.get(url, (response) => {
       // Handle redirects
       if (response.statusCode === 301 || response.statusCode === 302) {
         const redirectUrl = response.headers.location;
         if (redirectUrl) {
-          downloadPdf(redirectUrl).then(resolve).catch(reject);
+          downloadUrl(redirectUrl).then(resolve).catch(reject);
           return;
         }
       }
@@ -93,9 +133,14 @@ async function main() {
       console.log('[INFO] No existing database to backup');
     }
 
+    // Get current PDF URL from fb.gv.at
+    console.log('[...] Fetching current PDF URL from fb.gv.at...');
+    const pdfUrl = await getCurrentPdfUrl();
+    console.log(`[OK] Found PDF: ${pdfUrl}`);
+
     // Download PDF
-    console.log('[...] Downloading PDF from fb.gv.at...');
-    const pdfBuffer = await downloadPdf(PDF_URL);
+    console.log('[...] Downloading PDF...');
+    const pdfBuffer = await downloadUrl(pdfUrl);
     console.log(`[OK] Downloaded ${(pdfBuffer.length / 1024 / 1024).toFixed(2)} MB`);
 
     // Parse PDF
@@ -121,8 +166,8 @@ async function main() {
 
     // Create database object
     const database: CallsignDatabase = {
-      version: extractVersionFromUrl(PDF_URL),
-      sourceUrl: PDF_URL,
+      version: extractVersionFromUrl(pdfUrl),
+      sourceUrl: pdfUrl,
       parsedAt: new Date().toISOString(),
       count: entries.length,
       legalNotice: LEGAL_NOTICE,
