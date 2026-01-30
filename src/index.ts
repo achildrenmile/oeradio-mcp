@@ -11,6 +11,7 @@ import express, { Request, Response } from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { z } from "zod";
+import { registerCallsignTools } from "./tools/callsign/index.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -592,6 +593,11 @@ function createOeradioMcpServer(): McpServer {
   );
 
   // --------------------------------------------------------------------------
+  // CALLSIGN TOOLS (from separate module)
+  // --------------------------------------------------------------------------
+  registerCallsignTools(server);
+
+  // --------------------------------------------------------------------------
   // RESOURCE: Kompletter Bandplan
   // --------------------------------------------------------------------------
   server.resource(
@@ -703,7 +709,7 @@ app.get("/", (req: Request, res: Response) => {
     },
     tools: [
       "get_band_plan",
-      "list_all_bands", 
+      "list_all_bands",
       "check_frequency",
       "calculate_eirp",
       "calculate_cable_loss",
@@ -712,12 +718,19 @@ app.get("/", (req: Request, res: Response) => {
       "get_antenna_gain",
       "calculate_wavelength",
       "calculate_swr_loss",
-      "convert_power"
+      "convert_power",
+      "callsign_lookup",
+      "callsign_available",
+      "callsign_suggest",
+      "callsign_validate",
+      "callsign_database_info"
     ],
     resources: [
       "bandplan://iaru-region1/complete",
       "cables://coaxial/all",
-      "antennas://gains/all"
+      "antennas://gains/all",
+      "callsigns://districts",
+      "callsigns://license-classes"
     ]
   });
 });
