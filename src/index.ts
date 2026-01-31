@@ -593,6 +593,64 @@ function createOeradioMcpServer(): McpServer {
   );
 
   // --------------------------------------------------------------------------
+  // TOOL: List OERadio Tools
+  // --------------------------------------------------------------------------
+  server.tool(
+    "list_oeradio_tools",
+    "Listet alle verfügbaren OERadio.at Amateurfunk-Werkzeuge mit URLs und Beschreibungen",
+    {
+      category: z.enum(["all", "calculators", "learning", "utilities"]).default("all")
+        .describe("Kategorie filtern: all, calculators, learning, utilities")
+    },
+    async ({ category }) => {
+      const tools = {
+        calculators: [
+          { name: "AkkuBlick", url: "https://akkublick.oeradio.at", description: "Akkuplaner für Portabelbetrieb" },
+          { name: "AntennenBlick", url: "https://antennenblick.oeradio.at", description: "Antennen-Informationen und Berechnungen" },
+          { name: "BandBlick", url: "https://bandblick.oeradio.at", description: "IARU Region 1 Bandplan" },
+          { name: "KabelBlick", url: "https://kabelblick.oeradio.at", description: "Koaxialkabel-Dämpfungsrechner" },
+          { name: "StrahlBlick", url: "https://strahlblick.oeradio.at", description: "HF-Sicherheitsrechner (EIRP)" },
+          { name: "RelaisBlick", url: "https://relaisblick.oeradio.at", description: "Österreichische Relais-Karte" }
+        ],
+        learning: [
+          { name: "OE-CEPT", url: "https://oecept.oeradio.at", description: "Amateurfunk-Prüfungstrainer" },
+          { name: "CQ...Nothing", url: "https://cqnothing.oeradio.at", description: "KW-Fehleranalyse Trainer" },
+          { name: "FirstContact", url: "https://firstcontact.oeradio.at", description: "Kurzwellen-Einsteiger Tutorial" },
+          { name: "PrefixPlay", url: "https://prefixplay.oeradio.at", description: "Rufzeichenpräfix-Lernspiel" },
+          { name: "QBlitz", url: "https://qblitz.oeradio.at", description: "Q-Gruppen Schnelltrainer" },
+          { name: "QSOBuddy", url: "https://qsobuddy.oeradio.at", description: "QSO-Gesprächstrainer" },
+          { name: "MorseFleet", url: "https://morsefleet.oeradio.at", description: "Morse-Code Lernspiel" }
+        ],
+        utilities: [
+          { name: "QSL Card Generator", url: "https://qsl.oeradio.at", description: "QSL-Karten erstellen" },
+          { name: "FunkPilot", url: "https://funkpilot.oeradio.at", description: "KI-Assistent für Funkamateure" },
+          { name: "Dobratschrunde", url: "https://dobratschrunde.oeradio.at", description: "Amateurfunk-Runden Gästebuch" }
+        ]
+      };
+
+      let result: { name: string; url: string; description: string }[] = [];
+
+      if (category === "all") {
+        result = [...tools.calculators, ...tools.learning, ...tools.utilities];
+      } else {
+        result = tools[category] || [];
+      }
+
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify({
+            category: category === "all" ? "Alle Werkzeuge" : category,
+            website: "https://oeradio.at/werkzeuge/",
+            count: result.length,
+            tools: result
+          }, null, 2)
+        }]
+      };
+    }
+  );
+
+  // --------------------------------------------------------------------------
   // CALLSIGN TOOLS (from separate module)
   // --------------------------------------------------------------------------
   registerCallsignTools(server);
@@ -648,6 +706,132 @@ function createOeradioMcpServer(): McpServer {
         text: JSON.stringify({
           description: "Typische Antennengewinne in dBi",
           antennas: ANTENNA_GAINS
+        }, null, 2)
+      }]
+    })
+  );
+
+  // --------------------------------------------------------------------------
+  // RESOURCE: OERadio Tools Directory
+  // --------------------------------------------------------------------------
+  server.resource(
+    "oeradio://tools/all",
+    "Vollständiges Verzeichnis aller OERadio.at Amateurfunk-Werkzeuge",
+    async () => ({
+      contents: [{
+        uri: "oeradio://tools/all",
+        mimeType: "application/json",
+        text: JSON.stringify({
+          description: "OERadio.at - Amateurfunk-Werkzeuge von OE8YML",
+          website: "https://oeradio.at",
+          author: "OE8YML",
+          categories: {
+            calculators: {
+              name: "Rechner & Referenzen",
+              tools: [
+                {
+                  name: "AkkuBlick",
+                  url: "https://akkublick.oeradio.at",
+                  description: "Akkuplaner für Portabelbetrieb - berechnet Laufzeit basierend auf Kapazität und Verbrauch"
+                },
+                {
+                  name: "AntennenBlick",
+                  url: "https://antennenblick.oeradio.at",
+                  description: "Antennen-Informationen und Berechnungen"
+                },
+                {
+                  name: "BandBlick",
+                  url: "https://bandblick.oeradio.at",
+                  description: "IARU Region 1 Bandplan - Frequenzen, Modi und Leistungsgrenzen"
+                },
+                {
+                  name: "KabelBlick",
+                  url: "https://kabelblick.oeradio.at",
+                  description: "Koaxialkabel-Dämpfungsrechner für verschiedene Kabeltypen und Frequenzen"
+                },
+                {
+                  name: "StrahlBlick",
+                  url: "https://strahlblick.oeradio.at",
+                  description: "HF-Sicherheitsrechner - EIRP-Berechnung und Sicherheitsabstände nach ÖNORM"
+                },
+                {
+                  name: "RelaisBlick",
+                  url: "https://relaisblick.oeradio.at",
+                  description: "Interaktive Karte österreichischer Amateurfunk-Relais"
+                }
+              ]
+            },
+            learning: {
+              name: "Lernwerkzeuge",
+              tools: [
+                {
+                  name: "OE-CEPT",
+                  url: "https://oecept.oeradio.at",
+                  description: "Amateurfunk-Prüfungstrainer für die österreichische Lizenzprüfung"
+                },
+                {
+                  name: "CQ...Nothing",
+                  url: "https://cqnothing.oeradio.at",
+                  description: "Kurzwellen-Fehleranalyse - lerne HF-Probleme durch Szenarien zu diagnostizieren"
+                },
+                {
+                  name: "FirstContact",
+                  url: "https://firstcontact.oeradio.at",
+                  description: "Tutorial für Kurzwellen-Einsteiger - dein Weg in den Amateurfunk"
+                },
+                {
+                  name: "PrefixPlay",
+                  url: "https://prefixplay.oeradio.at",
+                  description: "Lernspiel für Amateurfunk-Rufzeichenpräfixe und DXCC-Länder"
+                },
+                {
+                  name: "QBlitz",
+                  url: "https://qblitz.oeradio.at",
+                  description: "Q-Gruppen Schnelltrainer - lerne Q-Codes effizient"
+                },
+                {
+                  name: "QSOBuddy",
+                  url: "https://qsobuddy.oeradio.at",
+                  description: "QSO-Trainer - übe typische Amateurfunk-Gespräche"
+                },
+                {
+                  name: "MorseFleet",
+                  url: "https://morsefleet.oeradio.at",
+                  description: "Morse-Code Lernspiel - Schiffe versenken mit CW (10-25 WPM)"
+                }
+              ]
+            },
+            utilities: {
+              name: "Utilities",
+              tools: [
+                {
+                  name: "QSL Card Generator",
+                  url: "https://qsl.oeradio.at",
+                  description: "QSL-Karten erstellen - individuelle Bestätigungskarten für Funkverbindungen"
+                },
+                {
+                  name: "FunkPilot",
+                  url: "https://funkpilot.oeradio.at",
+                  description: "KI-Assistent für Funkamateure - beantwortet Fragen rund um den Amateurfunk"
+                },
+                {
+                  name: "Dobratschrunde",
+                  url: "https://dobratschrunde.oeradio.at",
+                  description: "Gästebuch für die Dobratsch-Amateurfunkrunde (438.900 MHz)"
+                }
+              ]
+            },
+            mcp: {
+              name: "MCP Server",
+              tools: [
+                {
+                  name: "OERadio MCP",
+                  url: "https://oeradio-mcp.oeradio.at/mcp",
+                  description: "Model Context Protocol Server - alle Rechner als KI-Tools für Claude, ChatGPT und Gemini"
+                }
+              ]
+            }
+          }
         }, null, 2)
       }]
     })
@@ -719,6 +903,7 @@ app.get("/", (req: Request, res: Response) => {
       "calculate_wavelength",
       "calculate_swr_loss",
       "convert_power",
+      "list_oeradio_tools",
       "callsign_lookup",
       "callsign_available",
       "callsign_suggest",
@@ -729,6 +914,7 @@ app.get("/", (req: Request, res: Response) => {
       "bandplan://iaru-region1/complete",
       "cables://coaxial/all",
       "antennas://gains/all",
+      "oeradio://tools/all",
       "callsigns://districts",
       "callsigns://license-classes"
     ]

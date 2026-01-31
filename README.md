@@ -51,6 +51,12 @@ Model Context Protocol (MCP) is an open standard that allows AI assistants to us
 
 The callsign tools use the official Austrian callsign list from fb.gv.at as the primary data source. External lookups (QRZ.com, HamQTH) include warnings when a callsign is found externally but not in the official list.
 
+### Directory Tools
+
+| Tool | Description |
+|------|-------------|
+| `list_oeradio_tools` | List all OERadio.at amateur radio web tools with URLs |
+
 ## Available Resources
 
 | URI | Description |
@@ -58,6 +64,7 @@ The callsign tools use the official Austrian callsign list from fb.gv.at as the 
 | `bandplan://iaru-region1/complete` | Complete IARU Region 1 band plan |
 | `cables://coaxial/all` | Attenuation data for all coaxial cables |
 | `antennas://gains/all` | Typical antenna gain values |
+| `oeradio://tools/all` | Complete OERadio.at tools directory |
 | `callsigns://districts` | Austrian amateur radio districts (OE1-OE9) |
 | `callsigns://license-classes` | Austrian license class information |
 
@@ -79,6 +86,38 @@ Dipol, Groundplane, Vertical, Yagi (3/5/7 elements), Quad (2 elements), J-Pole, 
 - **License Classes:** Class 1 (CEPT full), Class 3 (CEPT restricted), Class 4 (Beginner)
 
 The callsign database is updated automatically on the 2nd of each month and contains ~7,500 entries.
+
+### OERadio.at Web Tools
+
+All tools are available at https://oeradio.at/werkzeuge/
+
+**Calculators (Blick-Series):**
+| Tool | URL | Description |
+|------|-----|-------------|
+| AkkuBlick | https://akkublick.oeradio.at | Battery planner for portable operation |
+| AntennenBlick | https://antennenblick.oeradio.at | Antenna information and calculations |
+| BandBlick | https://bandblick.oeradio.at | IARU Region 1 band plan viewer |
+| KabelBlick | https://kabelblick.oeradio.at | Coaxial cable attenuation calculator |
+| StrahlBlick | https://strahlblick.oeradio.at | RF safety calculator (EIRP) |
+| RelaisBlick | https://relaisblick.oeradio.at | Austrian repeater map |
+
+**Learning Tools:**
+| Tool | URL | Description |
+|------|-----|-------------|
+| OE-CEPT | https://oecept.oeradio.at | Austrian amateur radio exam trainer |
+| CQ...Nothing | https://cqnothing.oeradio.at | HF troubleshooting scenario trainer |
+| FirstContact | https://firstcontact.oeradio.at | Shortwave beginner tutorial |
+| PrefixPlay | https://prefixplay.oeradio.at | Callsign prefix learning game |
+| QBlitz | https://qblitz.oeradio.at | Q-codes rapid trainer |
+| QSOBuddy | https://qsobuddy.oeradio.at | QSO conversation practice |
+| MorseFleet | https://morsefleet.oeradio.at | Morse code Battleship game (10-25 WPM) |
+
+**Utilities:**
+| Tool | URL | Description |
+|------|-----|-------------|
+| QSL Card Generator | https://qsl.oeradio.at | Create custom QSL confirmation cards |
+| FunkPilot | https://funkpilot.oeradio.at | AI assistant for amateur radio |
+| Dobratschrunde | https://dobratschrunde.oeradio.at | Guestbook for Dobratsch radio round |
 
 ## Client Configuration
 
