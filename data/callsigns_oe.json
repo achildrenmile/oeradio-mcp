@@ -1,7 +1,7 @@
 {
   "version": "2025-07-01",
   "sourceUrl": "https://www.fb.gv.at/dam/jcr:7a8aeec6-bbf2-4d7d-ab3b-5335ebc7b8ed/Rufzeichenliste_AT_Stand_010725.pdf",
-  "parsedAt": "2026-03-02T06:43:32.506Z",
+  "parsedAt": "2026-04-02T06:59:32.714Z",
   "count": 7458,
   "legalNotice": "Diese Daten stammen aus der öffentlichen Rufzeichenliste des österreichischen Fernmeldebüros (fb.gv.at).\nDie Verwendung ist gemäß § 150 TKG 2021 nur für Amateurfunkzwecke gestattet.\nEine kommerzielle Nutzung oder Weitergabe an Dritte ist nicht erlaubt.",
   "entries": [
@@ -68728,13 +68728,13 @@
       "prefix": "OE",
       "district": 6,
       "suffix": "PUM",
-      "name": "Markus Puchinger",
-      "qth": "Vasoldsberg Aschenbachtal",
-      "plz": "8076",
-      "address": "17",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
       "licenseClass": 1,
       "isClub": false,
-      "isHidden": false
+      "isHidden": true
     },
     {
       "callsign": "OE6PVG",
