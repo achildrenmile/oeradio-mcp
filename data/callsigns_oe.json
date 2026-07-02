@@ -1,8 +1,8 @@
 {
-  "version": "2026-05-18",
-  "sourceUrl": "https://www.fb.gv.at/dam/jcr:7a8aeec6-bbf2-4d7d-ab3b-5335ebc7b8ed/Rufzeichenliste_AT_Stand_180526.pdf",
-  "parsedAt": "2026-06-02T10:01:23.412Z",
-  "count": 7040,
+  "version": "2026-06-19",
+  "sourceUrl": "https://www.fb.gv.at/dam/jcr:7a8aeec6-bbf2-4d7d-ab3b-5335ebc7b8ed/Rufzeichenliste_AT_Stand_190626.pdf",
+  "parsedAt": "2026-07-02T08:40:11.625Z",
+  "count": 7085,
   "legalNotice": "Diese Daten stammen aus der öffentlichen Rufzeichenliste des österreichischen Fernmeldebüros (fb.gv.at).\nDie Verwendung ist gemäß § 150 TKG 2021 nur für Amateurfunkzwecke gestattet.\nEine kommerzielle Nutzung oder Weitergabe an Dritte ist nicht erlaubt.",
   "entries": [
     {
@@ -630,6 +630,19 @@
       "isHidden": true
     },
     {
+      "callsign": "OE1AVV",
+      "prefix": "OE",
+      "district": 1,
+      "suffix": "AVV",
+      "name": "Safin Radik",
+      "qth": "Wien Leystraße 2 /",
+      "plz": "1200",
+      "address": "31",
+      "licenseClass": 4,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE1AWB",
       "prefix": "OE",
       "district": 1,
@@ -1185,19 +1198,6 @@
       "plz": "",
       "address": "",
       "licenseClass": 3,
-      "isClub": false,
-      "isHidden": true
-    },
-    {
-      "callsign": "OE1CAJ",
-      "prefix": "OE",
-      "district": 1,
-      "suffix": "CAJ",
-      "name": "",
-      "qth": "",
-      "plz": "",
-      "address": "",
-      "licenseClass": 1,
       "isClub": false,
       "isHidden": true
     },
@@ -2896,11 +2896,11 @@
       "prefix": "OE",
       "district": 1,
       "suffix": "EZY",
-      "name": "Alfred Riss",
-      "qth": "Wien Am Hofgartel",
+      "name": "Riss Alfred",
+      "qth": "Wien Am Hofgartel 6 / 3 /",
       "plz": "1110",
-      "address": "6",
-      "licenseClass": 4,
+      "address": "35",
+      "licenseClass": 1,
       "isClub": false,
       "isHidden": false
     },
@@ -3265,6 +3265,19 @@
       "plz": "1020",
       "address": "3/6/25",
       "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE1FSG",
+      "prefix": "OE",
+      "district": 1,
+      "suffix": "FSG",
+      "name": "Braunstingl Alexandra",
+      "qth": "Wien Schenkendorfgasse 48 /",
+      "plz": "1210",
+      "address": "35",
+      "licenseClass": 3,
       "isClub": false,
       "isHidden": false
     },
@@ -4365,11 +4378,11 @@
       "prefix": "OE",
       "district": 1,
       "suffix": "HMY",
-      "name": "Michael heinz Hlava",
+      "name": "Heinz hlava Michael",
       "qth": "Wien Ausstellungsstraße 71 /",
       "plz": "1020",
       "address": "11",
-      "licenseClass": 4,
+      "licenseClass": 1,
       "isClub": false,
       "isHidden": false
     },
@@ -6865,7 +6878,7 @@
       "qth": "Wien Veitingergasse 82 /",
       "plz": "1130",
       "address": "2",
-      "licenseClass": 4,
+      "licenseClass": 1,
       "isClub": false,
       "isHidden": false
     },
@@ -6918,19 +6931,6 @@
       "plz": "1100",
       "address": "7/2/25",
       "licenseClass": 1,
-      "isClub": false,
-      "isHidden": false
-    },
-    {
-      "callsign": "OE1LOM",
-      "prefix": "OE",
-      "district": 1,
-      "suffix": "LOM",
-      "name": "Lohse Michael",
-      "qth": "Wien Straßmeyergasse",
-      "plz": "1220",
-      "address": "61",
-      "licenseClass": 4,
       "isClub": false,
       "isHidden": false
     },
@@ -7034,6 +7034,19 @@
       "qth": "Wien Schöpfleuthnerg.",
       "plz": "1210",
       "address": "22/5",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE1LRJ",
+      "prefix": "OE",
+      "district": 1,
+      "suffix": "LRJ",
+      "name": "Lukjanović Srdjan",
+      "qth": "Wien Ferdinand-Platzer-Gasse 1 / 1 /",
+      "plz": "1210",
+      "address": "68",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -7641,11 +7654,11 @@
       "prefix": "OE",
       "district": 1,
       "suffix": "MHB",
-      "name": "Martin Huck",
-      "qth": "Wien Musgergasse",
+      "name": "Huck Martin",
+      "qth": "Wien Musgergasse 22 / 1 /",
       "plz": "1220",
-      "address": "22/1/2",
-      "licenseClass": 3,
+      "address": "2",
+      "licenseClass": 4,
       "isClub": false,
       "isHidden": false
     },
@@ -7914,11 +7927,11 @@
       "prefix": "OE",
       "district": 1,
       "suffix": "MLD",
-      "name": "Michael Lohse",
+      "name": "Lohse Michael",
       "qth": "Wien Straßmeyergasse",
       "plz": "1220",
       "address": "61",
-      "licenseClass": 3,
+      "licenseClass": 4,
       "isClub": false,
       "isHidden": false
     },
@@ -9353,6 +9366,32 @@
       "isHidden": false
     },
     {
+      "callsign": "OE1PCX",
+      "prefix": "OE",
+      "district": 1,
+      "suffix": "PCX",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
+    },
+    {
+      "callsign": "OE1PEM",
+      "prefix": "OE",
+      "district": 1,
+      "suffix": "PEM",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
+    },
+    {
       "callsign": "OE1PEQ",
       "prefix": "OE",
       "district": 1,
@@ -10085,13 +10124,13 @@
       "prefix": "OE",
       "district": 1,
       "suffix": "REF",
-      "name": "Alexander Magerle",
-      "qth": "Wien Ottakringer Straße",
-      "plz": "1160",
-      "address": "143",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
       "licenseClass": 4,
       "isClub": false,
-      "isHidden": false
+      "isHidden": true
     },
     {
       "callsign": "OE1REU",
@@ -10348,7 +10387,7 @@
       "name": "Loikasek Robert",
       "qth": "Wien,Donaustadt Dampfschiffhaufen 1 / Parz.",
       "plz": "1220",
-      "address": "22",
+      "address": "45",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -10519,6 +10558,19 @@
       "plz": "1160",
       "address": "Betrieb",
       "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE1RRC",
+      "prefix": "OE",
+      "district": 1,
+      "suffix": "RRC",
+      "name": "Schmalek Richard",
+      "qth": "Wien Graf-Starhemberg-Gasse 23 /",
+      "plz": "1040",
+      "address": "6",
+      "licenseClass": 4,
       "isClub": false,
       "isHidden": false
     },
@@ -11420,19 +11472,6 @@
       "isHidden": false
     },
     {
-      "callsign": "OE1SXM",
-      "prefix": "OE",
-      "district": 1,
-      "suffix": "SXM",
-      "name": "Sebastian Madl",
-      "qth": "Wien Bastiengasse",
-      "plz": "1180",
-      "address": "33/6",
-      "licenseClass": 1,
-      "isClub": false,
-      "isHidden": false
-    },
-    {
       "callsign": "OE1SYA",
       "prefix": "OE",
       "district": 1,
@@ -12191,13 +12230,13 @@
       "prefix": "OE",
       "district": 1,
       "suffix": "VAS",
-      "name": "",
-      "qth": "",
-      "plz": "",
-      "address": "",
+      "name": "Christoph Bonitz",
+      "qth": "Wien Felibergasse",
+      "plz": "1140",
+      "address": "130/1/2",
       "licenseClass": 1,
       "isClub": false,
-      "isHidden": true
+      "isHidden": false
     },
     {
       "callsign": "OE1VAU",
@@ -13283,11 +13322,11 @@
       "prefix": "OE",
       "district": 1,
       "suffix": "WSV",
-      "name": "Wolfgang Studirach",
-      "qth": "Wien Schönbrunner Straße",
+      "name": "Studirach Wolfgang",
+      "qth": "Wien Schönbrunner Straße 94 /",
       "plz": "1050",
-      "address": "94/39",
-      "licenseClass": 4,
+      "address": "39",
+      "licenseClass": 1,
       "isClub": false,
       "isHidden": false
     },
@@ -14171,6 +14210,19 @@
       "qth": "Wien Schlachthausgasse",
       "plz": "1030",
       "address": "30/2/6",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE1YEM",
+      "prefix": "OE",
+      "district": 1,
+      "suffix": "YEM",
+      "name": "Mathias baumann Heiko",
+      "qth": "Wien Kaiserstraße 78 /",
+      "plz": "1070",
+      "address": "15",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -15071,19 +15123,6 @@
       "licenseClass": 1,
       "isClub": false,
       "isHidden": true
-    },
-    {
-      "callsign": "OE2BFL",
-      "prefix": "OE",
-      "district": 2,
-      "suffix": "BFL",
-      "name": "Franz Boerger",
-      "qth": "Salzburg - Bergheim Hainachweg",
-      "plz": "5101",
-      "address": "2",
-      "licenseClass": 1,
-      "isClub": false,
-      "isHidden": false
     },
     {
       "callsign": "OE2BIL",
@@ -19584,6 +19623,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE2XSV",
+      "prefix": "OE",
+      "district": 2,
+      "suffix": "XSV",
+      "name": "Tirol des österreichischen Landesverband",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
       "callsign": "OE2XTL",
       "prefix": "OE",
       "district": 2,
@@ -21157,6 +21209,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE3BKK",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "BKK",
+      "name": "Karl bauer Di(fh)",
+      "qth": "Eichgraben Bergstraße",
+      "plz": "3032",
+      "address": "8a",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE3BKR",
       "prefix": "OE",
       "district": 3,
@@ -21421,10 +21486,10 @@
       "prefix": "OE",
       "district": 3,
       "suffix": "BPX",
-      "name": "Birgit Neumann",
-      "qth": "Haßbach / Warth Schloßstraße",
+      "name": "Neumann Birgit",
+      "qth": "Haßbach/Warth Berggasse",
       "plz": "2831",
-      "address": "3",
+      "address": "7",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -24953,6 +25018,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE3FSX",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "FSX",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
+    },
+    {
       "callsign": "OE3FTA",
       "prefix": "OE",
       "district": 3,
@@ -25887,6 +25965,19 @@
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
+    },
+    {
+      "callsign": "OE3GWI",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "GWI",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
     },
     {
       "callsign": "OE3GWJ",
@@ -27579,6 +27670,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE3JHD",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "JHD",
+      "name": "Heinz Josef",
+      "qth": "Unterwaltersdorf Mitterndorfer Straße",
+      "plz": "2442",
+      "address": "4/2",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE3JHS",
       "prefix": "OE",
       "district": 3,
@@ -27759,6 +27863,19 @@
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
+    },
+    {
+      "callsign": "OE3JPC",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "JPC",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
     },
     {
       "callsign": "OE3JPD",
@@ -28071,6 +28188,19 @@
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
+    },
+    {
+      "callsign": "OE3KAJ",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "KAJ",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
     },
     {
       "callsign": "OE3KAR",
@@ -29163,6 +29293,19 @@
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
+    },
+    {
+      "callsign": "OE3LKA",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "LKA",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
     },
     {
       "callsign": "OE3LKB",
@@ -34430,6 +34573,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE3TBP",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "TBP",
+      "name": "Bernd rochla Tobias",
+      "qth": "Echsenbach Sonnenhangstraße",
+      "plz": "3903",
+      "address": "1",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE3TBR",
       "prefix": "OE",
       "district": 3,
@@ -35712,6 +35868,19 @@
       "qth": "Karnabrunn Obenaus",
       "plz": "2113",
       "address": "5",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE3VSF",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "VSF",
+      "name": "Imanuel schartmüller, Fabio",
+      "qth": "Nöchling Florianigasse",
+      "plz": "3691",
+      "address": "6",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -37961,6 +38130,19 @@
       "qth": "",
       "plz": "",
       "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE3XZD",
+      "prefix": "OE",
+      "district": 3,
+      "suffix": "XZD",
+      "name": "Zivilschutzverband zweigstelle brunn am gebirge Nö",
+      "qth": "Brunn am Gebirge Alexander Groß-Gasse",
+      "plz": "2345",
+      "address": "71",
       "licenseClass": 1,
       "isClub": true,
       "isHidden": false
@@ -40618,6 +40800,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE4SXM",
+      "prefix": "OE",
+      "district": 4,
+      "suffix": "SXM",
+      "name": "Markus madl 7091 breitenbrunn am neusiedler Sebastian",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE4SZI",
       "prefix": "OE",
       "district": 4,
@@ -41549,6 +41744,19 @@
       "qth": "Waldhausen im Strudengau Ettenberg",
       "plz": "4391",
       "address": "5",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE5AME",
+      "prefix": "OE",
+      "district": 5,
+      "suffix": "AME",
+      "name": "Ammer Christian",
+      "qth": "Oftering Mayrgutstraße",
+      "plz": "4064",
+      "address": "2",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -43772,6 +43980,19 @@
       "qth": "Niederneukirchen Grünes Dorf",
       "plz": "4491",
       "address": "12",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE5DHO",
+      "prefix": "OE",
+      "district": 5,
+      "suffix": "DHO",
+      "name": "Methe Holger",
+      "qth": "Linz Dauphinestraße",
+      "plz": "4030",
+      "address": "196a/5",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -46338,6 +46559,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE5GTO",
+      "prefix": "OE",
+      "district": 5,
+      "suffix": "GTO",
+      "name": "Guserl Thomas",
+      "qth": "Rainbach im Mühlkreis Apfoltern 17 /",
+      "plz": "4261",
+      "address": "2",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE5GUP",
       "prefix": "OE",
       "district": 5,
@@ -47568,6 +47802,19 @@
       "qth": "Hellmonsödt Im Hölzl",
       "plz": "4202",
       "address": "16",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE5IIO",
+      "prefix": "OE",
+      "district": 5,
+      "suffix": "IIO",
+      "name": "Josef frank Robert",
+      "qth": "Ranshofen Wertheimerplatz",
+      "plz": "5282",
+      "address": "10/2",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -48860,19 +49107,6 @@
       "isHidden": false
     },
     {
-      "callsign": "OE5KVM",
-      "prefix": "OE",
-      "district": 5,
-      "suffix": "KVM",
-      "name": "Johann Kues",
-      "qth": "Attnang-Puchheim Mitterweg",
-      "plz": "4800",
-      "address": "61",
-      "licenseClass": 1,
-      "isClub": false,
-      "isHidden": false
-    },
-    {
       "callsign": "OE5KVN",
       "prefix": "OE",
       "district": 5,
@@ -49947,6 +50181,19 @@
       "qth": "Linz Vergeinerstraße",
       "plz": "4020",
       "address": "5",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE5MMP",
+      "prefix": "OE",
+      "district": 5,
+      "suffix": "MMP",
+      "name": "Mühllechner Markus",
+      "qth": "Schildorn Winkl",
+      "plz": "4920",
+      "address": "1a",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -54021,6 +54268,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE5TXF",
+      "prefix": "OE",
+      "district": 5,
+      "suffix": "TXF",
+      "name": "Stuart cawthorne Nigel",
+      "qth": "Weißkirchen an der Traun Weyerstraße",
+      "plz": "4616",
+      "address": "19",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE5TXL",
       "prefix": "OE",
       "district": 5,
@@ -55581,6 +55841,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE5XPL",
+      "prefix": "OE",
+      "district": 5,
+      "suffix": "XPL",
+      "name": "Club 68 Radio",
+      "qth": "Ölkam Zehetnerstraße",
+      "plz": "4490",
+      "address": "1",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
       "callsign": "OE5XPM",
       "prefix": "OE",
       "district": 5,
@@ -56164,6 +56437,19 @@
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
+    },
+    {
+      "callsign": "OE5ZSH",
+      "prefix": "OE",
+      "district": 5,
+      "suffix": "ZSH",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
     },
     {
       "callsign": "OE6AAD",
@@ -57106,13 +57392,13 @@
       "prefix": "OE",
       "district": 6,
       "suffix": "BIR",
-      "name": "Christine heilig-Bacher Birgit",
-      "qth": "Graz Prinzhoferweg",
-      "plz": "8042",
-      "address": "8",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
       "licenseClass": 1,
       "isClub": false,
-      "isHidden": false
+      "isHidden": true
     },
     {
       "callsign": "OE6BJD",
@@ -58961,6 +59247,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE6FEV",
+      "prefix": "OE",
+      "district": 6,
+      "suffix": "FEV",
+      "name": "Feldkircher Manuel",
+      "qth": "Großklein Nestelbach",
+      "plz": "8452",
+      "address": "23",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE6FFF",
       "prefix": "OE",
       "district": 6,
@@ -59468,6 +59767,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE6GGF",
+      "prefix": "OE",
+      "district": 6,
+      "suffix": "GGF",
+      "name": "Gillen Gasti",
+      "qth": "Graz Grazbachgasse",
+      "plz": "8010",
+      "address": "32",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE6GHD",
       "prefix": "OE",
       "district": 6,
@@ -59596,19 +59908,6 @@
       "licenseClass": 1,
       "isClub": false,
       "isHidden": true
-    },
-    {
-      "callsign": "OE6GKD",
-      "prefix": "OE",
-      "district": 6,
-      "suffix": "GKD",
-      "name": "Konrad Geissler",
-      "qth": "Ehrenhausen NR.",
-      "plz": "8461",
-      "address": "155",
-      "licenseClass": 1,
-      "isClub": false,
-      "isHidden": false
     },
     {
       "callsign": "OE6GLD",
@@ -61855,6 +62154,19 @@
       "qth": "Stattegg Am Hohenberg 19,",
       "plz": "8045",
       "address": "Remotefunkstelle",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE6KNG",
+      "prefix": "OE",
+      "district": 6,
+      "suffix": "KNG",
+      "name": "Kraxner Siegfried",
+      "qth": "Graz Floßlendstraße",
+      "plz": "8020",
+      "address": "22/37",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -64243,13 +64555,13 @@
       "prefix": "OE",
       "district": 6,
       "suffix": "PIE",
-      "name": "",
-      "qth": "",
-      "plz": "",
-      "address": "",
+      "name": "Piero attilio nitsche Iur.",
+      "qth": "Fernitz-Mellach Gnaninger Straße",
+      "plz": "8072",
+      "address": "103",
       "licenseClass": 1,
       "isClub": false,
-      "isHidden": true
+      "isHidden": false
     },
     {
       "callsign": "OE6PIG",
@@ -64711,13 +65023,13 @@
       "prefix": "OE",
       "district": 6,
       "suffix": "PUM",
-      "name": "Markus Puchinger",
-      "qth": "Vasoldsberg Aschenbachtal",
-      "plz": "8076",
-      "address": "17",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
       "licenseClass": 1,
       "isClub": false,
-      "isHidden": false
+      "isHidden": true
     },
     {
       "callsign": "OE6PVG",
@@ -67181,13 +67493,13 @@
       "prefix": "OE",
       "district": 6,
       "suffix": "VIE",
-      "name": "",
-      "qth": "",
-      "plz": "",
-      "address": "",
+      "name": "Engelbrecht Jörg",
+      "qth": "Murau Anna-Neumann-Straße",
+      "plz": "8850",
+      "address": "39",
       "licenseClass": 1,
       "isClub": false,
-      "isHidden": true
+      "isHidden": false
     },
     {
       "callsign": "OE6VKO",
@@ -69014,10 +69326,10 @@
       "prefix": "OE",
       "district": 6,
       "suffix": "YLA",
-      "name": "Anette Engelbrecht",
-      "qth": "St. Peter am Kammersberg Eichberg",
-      "plz": "8842",
-      "address": "51",
+      "name": "Engelbrecht Anette",
+      "qth": "Murau Anna-Neumann-Straße",
+      "plz": "8850",
+      "address": "39",
       "licenseClass": 4,
       "isClub": false,
       "isHidden": false
@@ -70145,8 +70457,8 @@
       "prefix": "OE",
       "district": 7,
       "suffix": "BMD",
-      "name": "Manfred Binder",
-      "qth": "Aschau Tannenweg",
+      "name": "Binder Manfred",
+      "qth": "Aschau im Zillertal Tannenweg",
       "plz": "6274",
       "address": "14",
       "licenseClass": 1,
@@ -70626,10 +70938,10 @@
       "prefix": "OE",
       "district": 7,
       "suffix": "CPI",
-      "name": "Christian inzing angerweg 22a Posch",
-      "qth": "",
-      "plz": "",
-      "address": "",
+      "name": "Posch Christian",
+      "qth": "Innsbruck Innerkoflerstraße 26 / Top",
+      "plz": "6020",
+      "address": "7/I",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -71848,13 +72160,13 @@
       "prefix": "OE",
       "district": 7,
       "suffix": "GAY",
-      "name": "Lorenz Kieler",
-      "qth": "Obergurgl Kressbrunnenweg 6 - Remote",
-      "plz": "6456",
-      "address": "Betrieb",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
       "licenseClass": 1,
       "isClub": false,
-      "isHidden": false
+      "isHidden": true
     },
     {
       "callsign": "OE7GB",
@@ -76316,19 +76628,6 @@
       "isHidden": false
     },
     {
-      "callsign": "OE7SMH",
-      "prefix": "OE",
-      "district": 7,
-      "suffix": "SMH",
-      "name": "Sveta Milanovic",
-      "qth": "Innsbruck Höttinger Au",
-      "plz": "6020",
-      "address": "80",
-      "licenseClass": 1,
-      "isClub": false,
-      "isHidden": false
-    },
-    {
       "callsign": "OE7SOG",
       "prefix": "OE",
       "district": 7,
@@ -77447,6 +77746,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE7XAR",
+      "prefix": "OE",
+      "district": 7,
+      "suffix": "XAR",
+      "name": "Tirol des österreichischen Landesverband",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
       "callsign": "OE7XAT",
       "prefix": "OE",
       "district": 7,
@@ -77507,6 +77819,19 @@
       "qth": "Igls",
       "plz": "6080",
       "address": "PATSCHERKOFEL",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE7XBX",
+      "prefix": "OE",
+      "district": 7,
+      "suffix": "XBX",
+      "name": "Uhf- und shf- club 6100 seefeld Amateurfunk",
+      "qth": "",
+      "plz": "",
+      "address": "",
       "licenseClass": 1,
       "isClub": true,
       "isHidden": false
@@ -77889,6 +78214,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE7XPR",
+      "prefix": "OE",
+      "district": 7,
+      "suffix": "XPR",
+      "name": "Tirol des österreichischen Landesverband",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
       "callsign": "OE7XRI",
       "prefix": "OE",
       "district": 7,
@@ -77980,6 +78318,45 @@
       "isHidden": false
     },
     {
+      "callsign": "OE7XUT",
+      "prefix": "OE",
+      "district": 7,
+      "suffix": "XUT",
+      "name": "Tirol des österreichischen Landesverband",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE7XVR",
+      "prefix": "OE",
+      "district": 7,
+      "suffix": "XVR",
+      "name": "Tirol des österreichischen Landesverband",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE7XWH",
+      "prefix": "OE",
+      "district": 7,
+      "suffix": "XWH",
+      "name": "Tirol des österreichischen Landesverband",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
       "callsign": "OE7XWI",
       "prefix": "OE",
       "district": 7,
@@ -78050,6 +78427,32 @@
       "district": 7,
       "suffix": "XZJ",
       "name": "Landesmuseen-Betriebsgesellschaft m.b.h. museum Tiroler",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE7XZR",
+      "prefix": "OE",
+      "district": 7,
+      "suffix": "XZR",
+      "name": "Tirol des österreichischen Landesverband",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE7XZT",
+      "prefix": "OE",
+      "district": 7,
+      "suffix": "XZT",
+      "name": "Tirol des österreichischen Landesverband",
       "qth": "",
       "plz": "",
       "address": "",
@@ -80983,6 +81386,19 @@
       "isHidden": true
     },
     {
+      "callsign": "OE8HEP",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "HEP",
+      "name": "Paulitsch Helmut",
+      "qth": "St. Andrä St. Andrä",
+      "plz": "9433",
+      "address": "191",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE8HFK",
       "prefix": "OE",
       "district": 8,
@@ -81312,10 +81728,10 @@
       "prefix": "OE",
       "district": 8,
       "suffix": "IEA",
-      "name": "Gabriel Kugi",
-      "qth": "Arnoldstein Bildstockstraße",
-      "plz": "9601",
-      "address": "6",
+      "name": "Kugi Gabriel",
+      "qth": "Hohenthurn Hohenthurn",
+      "plz": "9602",
+      "address": "78",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -81893,6 +82309,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE8KAZ",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "KAZ",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
+    },
+    {
       "callsign": "OE8KBD",
       "prefix": "OE",
       "district": 8,
@@ -82413,6 +82842,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE8LIF",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "LIF",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
+    },
+    {
       "callsign": "OE8LIK",
       "prefix": "OE",
       "district": 8,
@@ -82543,6 +82985,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE8LUX",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "LUX",
+      "name": "Franz josef leitner Johannes",
+      "qth": "Moosburg Föhrenweg",
+      "plz": "9062",
+      "address": "19",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE8LVB",
       "prefix": "OE",
       "district": 8,
@@ -82551,6 +83006,19 @@
       "qth": "Klagenfurt Ebenthalerstraße 221",
       "plz": "9020",
       "address": "H",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE8LYT",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "LYT",
+      "name": "Leitner Lena",
+      "qth": "Spittal an der Drau Ladinigstraße",
+      "plz": "9800",
+      "address": "7",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -82699,6 +83167,19 @@
       "isHidden": true
     },
     {
+      "callsign": "OE8MDT",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "MDT",
+      "name": "Tilly, Dominic",
+      "qth": "Arnoldstein Pöckau 174 /",
+      "plz": "9601",
+      "address": "2",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE8MEA",
       "prefix": "OE",
       "district": 8,
@@ -82807,10 +83288,10 @@
       "prefix": "OE",
       "district": 8,
       "suffix": "MIJ",
-      "name": "Marina Kugi",
-      "qth": "Arnoldstein Bildstockstraße",
-      "plz": "9601",
-      "address": "6",
+      "name": "Kugi Marina",
+      "qth": "Hohenthurn Hohenthurn",
+      "plz": "9602",
+      "address": "78",
       "licenseClass": 4,
       "isClub": false,
       "isHidden": false
@@ -84150,6 +84631,19 @@
       "qth": "Klagenfurt Lexergasse",
       "plz": "9020",
       "address": "6",
+      "licenseClass": 4,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE8RKA",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "RKA",
+      "name": "Käfel Roman",
+      "qth": "St. Georgen im Lavanttal Sonnenhang 3 /",
+      "plz": "9423",
+      "address": "1",
       "licenseClass": 4,
       "isClub": false,
       "isHidden": false
@@ -85585,6 +86079,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE8VHT",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "VHT",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
+    },
+    {
       "callsign": "OE8VIK",
       "prefix": "OE",
       "district": 8,
@@ -86222,6 +86729,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE8XCF",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "XCF",
+      "name": "Radio sport club arsc Alpin",
+      "qth": "St. Veit an der Glan Paracelsusgasse",
+      "plz": "9300",
+      "address": "10",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
       "callsign": "OE8XCK",
       "prefix": "OE",
       "district": 8,
@@ -86412,6 +86932,19 @@
       "qth": "",
       "plz": "",
       "address": "",
+      "licenseClass": 1,
+      "isClub": true,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE8XJH",
+      "prefix": "OE",
+      "district": 8,
+      "suffix": "XJH",
+      "name": "In österreich Johanniter-Unfall-Hilfe",
+      "qth": "Patergassen Wiedweg",
+      "plz": "9564",
+      "address": "39",
       "licenseClass": 1,
       "isClub": true,
       "isHidden": false
@@ -87730,6 +88263,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE9DHA",
+      "prefix": "OE",
+      "district": 9,
+      "suffix": "DHA",
+      "name": "Hammer Dominik",
+      "qth": "Gaschurn Obere Gosta 175 / Top",
+      "plz": "6793",
+      "address": "2",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE9DKH",
       "prefix": "OE",
       "district": 9,
@@ -87985,19 +88531,6 @@
       "qth": "Rankweil Rötzenweg",
       "plz": "6830",
       "address": "1a",
-      "licenseClass": 1,
-      "isClub": false,
-      "isHidden": false
-    },
-    {
-      "callsign": "OE9FEV",
-      "prefix": "OE",
-      "district": 9,
-      "suffix": "FEV",
-      "name": "Manuel Feldkircher",
-      "qth": "Lech Strass 41",
-      "plz": "6764",
-      "address": "(OE9FEV)",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -88778,6 +89311,19 @@
       "qth": "Hohenems Bergstrasse 5b -",
       "plz": "6845",
       "address": "Remotebetrieb",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE9JBE",
+      "prefix": "OE",
+      "district": 9,
+      "suffix": "JBE",
+      "name": "Hans jabinger Bernd",
+      "qth": "Hörbranz Römerstraße 29 Top",
+      "plz": "6912",
+      "address": "1",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
@@ -90343,6 +90889,19 @@
       "isHidden": false
     },
     {
+      "callsign": "OE9RTV",
+      "prefix": "OE",
+      "district": 9,
+      "suffix": "RTV",
+      "name": "Tomaselli Reinhard",
+      "qth": "Bregenz Wuhrwaldstraße 37 / Top",
+      "plz": "6900",
+      "address": "9",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
       "callsign": "OE9RWH",
       "prefix": "OE",
       "district": 9,
@@ -90633,6 +91192,19 @@
       "prefix": "OE",
       "district": 9,
       "suffix": "SSH",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": true
+    },
+    {
+      "callsign": "OE9SSZ",
+      "prefix": "OE",
+      "district": 9,
+      "suffix": "SSZ",
       "name": "",
       "qth": "",
       "plz": "",
@@ -90984,13 +91556,13 @@
       "prefix": "OE",
       "district": 9,
       "suffix": "VTS",
-      "name": "Thomas Summer",
-      "qth": "Fraxern Unterdorf 6 - Remote",
-      "plz": "6833",
-      "address": "Betrieb",
+      "name": "",
+      "qth": "",
+      "plz": "",
+      "address": "",
       "licenseClass": 1,
       "isClub": false,
-      "isHidden": false
+      "isHidden": true
     },
     {
       "callsign": "OE9VVV",
@@ -91456,6 +92028,19 @@
       "qth": "Dornbirn BöNGERN",
       "plz": "6850",
       "address": "10",
+      "licenseClass": 1,
+      "isClub": false,
+      "isHidden": false
+    },
+    {
+      "callsign": "OE9YBT",
+      "prefix": "OE",
+      "district": 9,
+      "suffix": "YBT",
+      "name": "Bitschnau Tanja",
+      "qth": "Nenzing Kesseweg",
+      "plz": "6710",
+      "address": "65",
       "licenseClass": 1,
       "isClub": false,
       "isHidden": false
